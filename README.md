@@ -52,7 +52,7 @@ Uma foto do mesmo pode ser encontrada abaixo
     <source src="assets/video.mp4" type="video/mp4">
 </video>
 Caso o vídeo não esteja sendo exibido, está na pasta *assets/video.mp4*
-
+![Imagem do projeto](assets/video.mp4)
 # Análise de custo
 ![Imagem do projeto](assets/precificacao.png)
 
