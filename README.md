@@ -51,9 +51,7 @@ Uma foto do mesmo pode ser encontrada abaixo
 
 Caso o vídeo não esteja sendo exibido, está na pasta *assets/video.mp4*
 
-<video>
-    <source src="assets/video.mp4" type="video/mp4">
-</video>
+https://github.com/Davi-fsS/microcontroladores/assets/100360420/0e3e6e90-fc8e-4425-a719-3dbb9caba66f
 
 # Análise de custo
 ![Imagem do projeto](assets/precificacao.png)
