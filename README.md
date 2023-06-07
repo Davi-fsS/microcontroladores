@@ -1,6 +1,6 @@
 # *Drinker* de bebidas
 
-Este projeto consiste na criação de um *drinker* de bebidas utilizando o *Raspberry Pico Pi*. 
+Este projeto consiste na criação de um *drinker* de bebidas utilizando o *Raspberry Pi Pico*. 
 Em outras palavras, consiste no usuário selecionar um dos três botões, onde cada botão representa uma mistura de bebida diferente, e será despejada a combinação escolhida assim que pressionado.
 Foi utilizado MicroPython como linguagem de programação no desenvolvimento do software.
 
