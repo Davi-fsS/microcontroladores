@@ -10,7 +10,7 @@ Foi utilizado MicroPython como linguagem de programação no desenvolvimento do 
 Esquema elétrico na pasta */esquema-elétrico/DiagramaElétrico*
 
 # Diagrama de blocos
-![Imagem do projeto](assets/diagrama.png)
+![Imagem do projeto](assets/DiagramaBlocos.png)
 
 # Requisitos
 ![Imagem do projeto](assets/requisitos.jpg)
