@@ -6,6 +6,8 @@ app = Flask(__name__)
 
 doses = ["FANTA", "COCA", "GUARANA", "VODKA"]
 
+LIMIT = 60
+
 drinks = [
     {
         "id": 1,
@@ -19,6 +21,24 @@ drinks = [
         "img_url": "https://p2.trrsf.com/image/fget/cf/1200/1200/middle/images.terra.com/2013/11/30/cocacoaacucar.jpg",
         "description": "Muito oba oba"
     }
+]
+
+bottles = [
+    {
+        "id": 1,
+        "drink_name": "Fanta",
+        "actual_level": 61
+    },
+    {
+        "id": 2,
+        "drink_name": "Coca",
+        "actual_level": 80
+    },
+    {
+        "id": 3,
+        "drink_name": "Guarana",
+        "actual_level": 50
+    },
 ]
 
 
@@ -58,8 +78,8 @@ def get_detail_by_id():
         return jsonify({"error": "Nenhuma bebida encontrada com o id fornecido"}), 404
 
 
-@app.route('/create_bebida', methods=['POST'])
-def create_bebida():
+@app.route('/create_drink', methods=['POST'])
+def create_drink():
     data = request.get_json()
     new_drink = {
         "id": len(drinks) + 1,
@@ -89,6 +109,23 @@ def verify_drink():
             return jsonify({"result": False})
     else:
         return jsonify({"error": "Nenhuma bebida encontrada com o id fornecido"}), 404
+
+
+@app.route('/verify-doses', methods=['GET'])
+def verify_doses():
+    dose_A = request.args.get('dose_A').upper()
+    dose_B = request.args.get('dose_B').upper()
+    array = []
+    for bottle in bottles:
+        if (bottle["drink_name"].upper() == dose_A.upper()):
+            array.append(bottle["actual_level"] > LIMIT)
+        if (bottle["drink_name"].upper() == dose_B.upper()):
+            array.append(bottle["actual_level"] > LIMIT)
+
+    if False not in array:
+        return jsonify(True), 200
+    else:
+        return jsonify(False), 404
 
 
 if __name__ == '__main__':

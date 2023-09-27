@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "../components/Button/Button";
 import Card from "../components/Card/Card";
 import DrinkCard from "../components/DrinkCard/DrinkCard";
-import { getAllDrinks, getDetailById } from "../services/drinkServices";
+import { getAllDrinks, getDetailById, verifyDoses } from "../services/drinkServices";
 import "./style.css";
 
 const Flow = () => {
@@ -153,15 +153,17 @@ const Flow = () => {
 
     const makeOrder = async () => {
         setDoingDrink(true);
-
-        setTimeout(() => {
-            setDoingDrink(false);
-        }, 3000);
-        //chamar api para chamada
-
-        // setError(true);
-        // setErrorMessage("Não possuímos doses suficientes de (bebida).")
         setOrderConfirmation(true);
+        const verify = await verifyDoses(drinkDetail[0]?.dose_A, drinkDetail[0]?.dose_B);
+
+        if (!verify) {
+            setError(true);
+            setErrorMessage("Não possuímos doses suficientes de (bebida).");
+        }
+        else {
+            setDoingDrink(false);
+        }
+
     };
 
     const goToMenu = () => {

@@ -40,3 +40,17 @@ export const getDetailById = async (id) => {
     }
 };
 
+export const verifyDoses = async (doseA, doseB) => {
+    const _endpoint = `verify-doses?dose_A=${doseA}&dose_B=${doseB}`;
+
+    try {
+        const response = await axios.get(_apiBaseUrl + _endpoint);
+
+        return response.data;
+
+    }
+    catch (error) {
+        return error.response.data;
+    }
+};
+
