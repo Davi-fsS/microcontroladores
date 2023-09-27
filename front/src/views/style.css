@@ -1,0 +1,51 @@
+.position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    gap: 0rem 20rem;
+    flex-wrap: wrap;
+}
+
+.dose-content {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.dose-content .dose-field {
+    width: 40%;
+    display: flex;
+    align-items: center
+}
+
+.doses-button {
+    background-color: #FC9B08;
+    border: none;
+    flex: 1;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.dose-content p {
+    margin: 0;
+}
+
+.dose-content .dose-field p {
+    width: 30%;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}

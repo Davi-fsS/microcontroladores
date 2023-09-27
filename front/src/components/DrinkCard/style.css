@@ -1,0 +1,17 @@
+.drink-card {
+    width: 250px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    height: 250px;
+}
+
+.drink-card:hover {
+    transform: scale(1.05);
+}
+
+img {
+    width: 40%;
+}
