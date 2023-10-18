@@ -54,3 +54,35 @@ export const verifyDoses = async (doseA, doseB) => {
     }
 };
 
+export const prepareDrink = async (doseA, doseB) => {
+    const _endpoint = `make-order?dose_A=${doseA}&dose_B=${doseB}`;
+
+    try {
+        const response = await axios.get(_apiBaseUrl + _endpoint);
+
+        return response;
+
+    }
+    catch (error) {
+        return error.response;
+    }
+};
+
+export const updateDrinkLevels = async () => {
+    const _endpoint = 'update-level';
+
+    try {
+        const response = await axios.get(_apiBaseUrl + _endpoint);
+
+        if (response.status === 200) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    catch (error) {
+        return false;
+    }
+};
+
