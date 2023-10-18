@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "../components/Button/Button";
 import Card from "../components/Card/Card";
 import DrinkCard from "../components/DrinkCard/DrinkCard";
-import { getAllDrinks, getDetailById, verifyDoses } from "../services/drinkServices";
+import { getAllDrinks, getDetailById, prepareDrink, updateDrinkLevels, verifyDoses } from "../services/drinkServices";
 import "./style.css";
 
 const Flow = () => {
@@ -74,6 +74,14 @@ const Flow = () => {
         }, 4000);
 
     }, [isCardRead]);
+
+    useEffect(() => {
+        const requestData = async () => {
+            await updateDrinkLevels();
+        };
+
+        requestData();
+    }, [isOpenDetail]);
 
     const initializingSystem = async () => {
         setIsSystemStarted(true);
@@ -161,7 +169,14 @@ const Flow = () => {
             setErrorMessage("Não possuímos doses suficientes de (bebida).");
         }
         else {
-            setDoingDrink(false);
+            const makeDrink = await prepareDrink(drinkDetail[0]?.dose_A, drinkDetail[0]?.dose_B)
+            if (makeDrink.status === 200) {
+                setDoingDrink(false);
+            }
+            else {
+                setError(true);
+                setErrorMessage(makeDrink.response);
+            }
         }
 
     };
