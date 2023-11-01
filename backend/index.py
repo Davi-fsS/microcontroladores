@@ -30,22 +30,22 @@ bottles = [
         "id": 1,
         "drink_name": "Fanta",
         "actual_level": 61,
-        "rele_pin_number": 12,
-        "moisture_pin_number": 26
+        "rele_pin_number": 25,
+        "moisture_pin_number": 17
     },
     {
         "id": 2,
         "drink_name": "Coca",
         "actual_level": 80,
-        "rele_pin_number": 11,
+        "rele_pin_number": 23,
         "moisture_pin_number": 27
     },
     {
         "id": 3,
         "drink_name": "Guarana",
         "actual_level": 50,
-        "rele_pin_number": 10,
-        "moisture_pin_number": 28
+        "rele_pin_number": 24,
+        "moisture_pin_number": 22
     },
 ]
 
